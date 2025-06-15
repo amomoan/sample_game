@@ -1,0 +1,86 @@
+#play-container {
+    background-color: #fce4ec; /* 暖かいピンク色 */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    min-height: 500px; /* ある程度の高さを確保 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 要素を上下に配置 */
+    align-items: center;
+}
+
+#play-container h2 {
+    color: #e91e63; /* ピンク */
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+#interaction-area {
+    width: 100%;
+    height: 350px; /* インタラクションエリアの高さ */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* ねこがはみ出さないように */
+    margin-bottom: 20px;
+}
+
+#play-cat-image {
+    width: 250px; /* 遊ぶ時のねこは少し大きめに */
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; /* クリックできることを示す */
+    transition: transform 0.1s ease-out; /* リアクション時のアニメーション */
+}
+
+#play-cat-image.react {
+    transform: translate(-50%, -50%) scale(1.05); /* 少し拡大 */
+    filter: brightness(1.1); /* 少し明るく */
+}
+
+
+#play-message {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #e91e63;
+    z-index: 10;
+    opacity: 0; /* 最初は非表示 */
+    transition: opacity 0.3s ease-out;
+}
+
+#play-message.show {
+    opacity: 1;
+}
+
+#btn-stop-play {
+    background-color: #ff9800; /* オレンジ */
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#btn-stop-play:hover {
+    background-color: #fb8c00; /* 濃いオレンジ */
+}
+
+#play-energy-cost, #play-mood-gain {
+    font-weight: bold;
+    color: #555;
+}

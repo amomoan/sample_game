@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ねこ育成ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>ねこ育成ゲーム</h1>
+
+        <div id="cat-display">
+            <img id="cat-image" src="images/cat_normal.png" alt="ねこ">
+            <div id="cat-stats">
+                <p>体力: <span id="stat-energy">100</span></p>
+                <p>満腹度: <span id="stat-fullness">100</span></p>
+                <p>機嫌: <span id="stat-mood">100</span></p>
+                <p>清潔さ: <span id="stat-cleanliness">100</span></p>
+            </div>
+            <div id="cat-message"></div>
+        </div>
+
+        <div id="action-buttons">
+            <button id="btn-play">遊ぶ</button>
+            <button id="btn-feed">餌をあげる</button>
+            <button id="btn-scold">しつける（叱る）</button>
+            <button id="btn-clean-poop">糞の処理</button>
+            <button id="btn-sleep">寝る</button>
+        </div>
+
+        <div id="economy-info">
+            <p>所持金: <span id="player-money">1000</span>G</p>
+            <button id="btn-shop">ショップ</button>
+            <button id="btn-work">仕事に行く</button>
+        </div>
+
+        <div id="poop-area" style="display: none;">
+            <img src="images/poop.png" alt="うんち" id="poop-image">
+        </div>
+
+        <div id="shop-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>ショップ</h2>
+                <div id="shop-items">
+                    <div class="shop-item" data-item-id="food_basic">
+                        <p>基本の餌 (50G)</p>
+                        <button class="buy-button">購入</button>
+                    </div>
+                    <div class="shop-item" data-item-id="toy_ball">
+                        <p>ボール (100G)</p>
+                        <button class="buy-button">購入</button>
+                    </div>
+                </div>
+                <button class="close-modal">閉じる</button>
+            </div>
+        </div>
+
+        <div id="work-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>仕事</h2>
+                <p>頑張って働こう！</p>
+                <button id="btn-start-work">仕事を開始（30秒）</button>
+                <p id="work-timer"></p>
+                <button class="close-modal">閉じる</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
